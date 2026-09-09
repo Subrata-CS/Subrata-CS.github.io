@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Subrata Pramanik</title>
+  <meta name="author" content="Subrata Pramanik">
+  <meta name="description" content="Research Scholar at IIIT Allahabad.">
+  <meta name="keywords" content="document-understanding, computer-vision, retrieval-augmented-generation">
+
+  <meta property="og:title" content="Subrata Pramanik">
+  <meta property="og:description" content="Research Scholar at IIIT Allahabad. Visual Document Understanding | Multimodal Retrieval &amp; Reasoning">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+
+  <!-- Same CSS stack as the reference site -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- Apply the saved theme before first paint, so there is no white flash -->
+  <script>
+    (function(){
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch(e) {}
+    })();
+  </script>
+</head>
+
+<body class="fixed-top-nav sticky-bottom-footer">
+
+  <header>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+      <div class="container">
+        <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse text-right" id="navbarNav">
+          <ul class="navbar-nav ml-auto flex-nowrap">
+            <li class="nav-item active"><a class="nav-link" href="#about">about <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#highlights">highlights</a></li>
+            <li class="nav-item"><a class="nav-link" href="#education">education</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#misc">interests</a></li>
+            <div class="toggle-container">
+              <a id="light-toggle" role="button" tabindex="0" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+              </a>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Scrolling Progress Bar -->
+    <progress id="progress" value="0">
+      <div class="progress-container">
+        <span class="progress-bar"></span>
+      </div>
+    </progress>
+  </header>
+
+  <!-- Content -->
+  <div class="container mt-5">
+    <div class="post" id="about">
+
+      <header class="post-header">
+        <h1 class="post-title">
+          <span class="font-weight-bold">Subrata</span> Pramanik
+        </h1>
+        <p class="desc">
+          <a href="https://www.iiita.ac.in/" rel="external nofollow noopener" target="_blank">IIIT Allahabad</a>.
+          Visual Document Understanding | Multimodal Retrieval &amp; Reasoning
+        </p>
+      </header>
+
+      <article>
+
+        <!-- TODO: your photo at assets/img/prof_pic.jpg -->
+        <div class="profile float-right">
+          <figure>
+            <img src="assets/img/prof_pic.jpg" class="img-fluid z-depth-1 rounded" alt="prof_pic.jpg" loading="eager" data-w="100%" data-h="300">
+          </figure>
+          <div class="address"><p></p></div>
+        </div>
+
+        <div class="clearfix">
+          <p>
+            I am a <strong>Research Scholar</strong> in <strong>Computer Vision and Pattern Recognition</strong> at
+            <a href="https://www.iiita.ac.in/" rel="external nofollow noopener" target="_blank">IIIT Allahabad</a>,
+            working in the <strong>iMeDIA Laboratory</strong> under Dr. <strong>Mohammed Javed</strong>. My research
+            focuses on <strong>visual document understanding</strong> and <strong>retrieval-augmented generation</strong>
+            with multimodal large language models.
+          </p>
+
+          <p>
+            A large part of my recent work is <strong>measurement-first</strong>: isolating which component of a complex
+            pipeline actually produces a reported gain. In my current study on multi-agent document understanding,
+            controlled ensemble ablations on DocVQA and InfographicVQA show that improvements widely credited to trained
+            routers and orchestration are largely explained by <strong>model heterogeneity</strong> alone.
+          </p>
+
+          <p>
+            I also work on <strong>visual document retrieval</strong>, studying how embedding compression degrades
+            fine-grained local queries far more than page-level global ones, and on
+            <strong>query-adaptive re-encoding</strong> as a way to keep retrieval quality without paying full
+            multi-vector storage cost. Alongside this I am completing a channel-centric survey of retrieval-augmented
+            visual document understanding with collaborators including Prof.
+            <a href="https://cse.buffalo.edu/~doermann/" rel="external nofollow noopener" target="_blank">David Doermann</a>
+            (University at Buffalo).
+          </p>
+
+          <p>
+            Beyond research, I build things. I created
+            <a href="https://subrata-cs.github.io/open/" rel="external nofollow noopener" target="_blank">Open</a>,
+            a free computer-science learning platform with 578 topics and an in-browser code runner for 18 languages.
+            I also run
+            <a href="https://subratasikhaniketan.com/" rel="external nofollow noopener" target="_blank">Subrata Sikha Niketan</a>,
+            an education platform from Prayagraj that prepares students across India for competitive examinations.
+          </p>
+
+          <p>
+            Whether you are a student starting out in computer vision, or a researcher working on document AI, feel free
+            to connect with me through the links below.
+          </p>
+        </div>
+
+        <!-- Social -->
+        <div class="social">
+          <div class="contact-icons">
+            <a href="#" id="email-link" title="email"><i class="fas fa-envelope"></i></a>
+            <a href="https://scholar.google.com/" title="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i></a>
+            <a href="https://github.com/Subrata-CS" title="GitHub" rel="external nofollow noopener" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/" title="LinkedIn" rel="external nofollow noopener" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://orcid.org/" title="ORCID" rel="external nofollow noopener" target="_blank"><i class="ai ai-orcid"></i></a>
+            <a href="assets/pdf/SubrataPramanik_CV.pdf" title="CV"><i class="fas fa-file-alt"></i></a>
+          </div>
+
+          <!-- Live stats: each item hides itself if its source is unreachable -->
+          <div class="live-bar" id="live-bar" aria-live="polite">
+            <span class="stat" id="stat-views" hidden>
+              <span class="live-dot" aria-hidden="true"></span>
+              <span class="num" id="views-count">—</span>&nbsp;profile views
+            </span>
+            <span class="stat" id="stat-stars" hidden>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span class="num" id="stars-count">—</span>&nbsp;GitHub stars
+            </span>
+            <span class="stat" id="stat-followers" hidden>
+              <i class="fas fa-user-friends" aria-hidden="true"></i>
+              <span class="num" id="followers-count">—</span>&nbsp;followers
+            </span>
+            <span class="stat" id="stat-clock" hidden>
+              <i class="far fa-clock" aria-hidden="true"></i>
+              <span class="num" id="clock">—</span>&nbsp;in Prayagraj
+            </span>
+          </div>
+
+          <div class="contact-note"></div>
+        </div>
+
+        <!-- News -->
+        <div class="news">
+          <h2 style="padding-top: 20px;"><b>news</b></h2>
+          <div class="table-responsive" style="max-height: 10vw">
+            <table class="table table-sm table-borderless">
+              <tr style="font-size: 0.7rem;">
+                <th scope="row" style="white-space: nowrap; width: 1%; padding-right: 1rem; vertical-align: top;">Sep 2026</th>
+                <td style="vertical-align: top;">Preparing our <strong>IEEE RAIT 2026</strong> submission on compression-aware visual document retrieval — query-adaptive re-encoding for multi-vector retrievers.</td>
+              </tr>
+              <tr style="font-size: 0.7rem;">
+                <th scope="row" style="white-space: nowrap; width: 1%; padding-right: 1rem; vertical-align: top;">Aug 2026</th>
+                <td style="vertical-align: top;">Our survey on retrieval-augmented visual document understanding is under review at <strong>IEEE TPAMI</strong> — 356 references, 47 datasets, 60 venues searched. 📚</td>
+              </tr>
+              <tr style="font-size: 0.7rem;">
+                <th scope="row" style="white-space: nowrap; width: 1%; padding-right: 1rem; vertical-align: top;">Jul 2026</th>
+                <td style="vertical-align: top;">New result: heterogeneous-ensemble voting beats same-model self-consistency on both DocVQA and InfographicVQA (+0.041 ANLS, p &lt; 0.0001)! ✨</td>
+              </tr>
+              <tr style="font-size: 0.7rem;">
+                <th scope="row" style="white-space: nowrap; width: 1%; padding-right: 1rem; vertical-align: top;">May 2026</th>
+                <td style="vertical-align: top;">Released <a href="https://subrata-cs.github.io/open/" rel="external nofollow noopener" target="_blank">Open</a> — a free CS learning platform with 578 topics, an 18-language in-browser code runner and a Code Lab notebook. 🎉</td>
+              </tr>
+              <tr style="font-size: 0.7rem;">
+                <th scope="row" style="white-space: nowrap; width: 1%; padding-right: 1rem; vertical-align: top;">2025</th>
+                <td style="vertical-align: top;">Joined the <strong>iMeDIA Laboratory</strong> at IIIT Allahabad as a research scholar in document image analysis and multimodal retrieval.</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- highlights -->
+        <div class="custom_projects" id="highlights">
+          <h2 style="padding-top: 20px;"><b>highlighting skills</b></h2>
+          <ul>
+            <li>Programming Languages: Python, C, C++, JavaScript, TypeScript, HTML, CSS, Bash, SQL, LaTeX</li>
+            <li>ML &amp; Vision: PyTorch, HuggingFace Transformers, PEFT/LoRA, bitsandbytes, OpenCV, Scikit-learn, NumPy, Pandas</li>
+            <li>Multimodal Models: Qwen2/2.5-VL, InternVL3, GLM-4.5V, ColPali / ColQwen2, LLaVA-family, CLIP, SigLIP</li>
+            <li>Retrieval &amp; RAG: late-interaction multi-vector retrieval, FAISS, embedding compression, re-ranking, ViDoRe benchmarking</li>
+            <li>Evaluation: ANLS, Recall@k, nDCG, bootstrap confidence intervals, paired significance testing, Cohen's κ</li>
+            <li>Infrastructure: Linux, CUDA, RunPod, JupyterLab, Docker, Git &amp; GitHub Actions, long-running job management</li>
+            <li>Web: React, Docusaurus 3, Node.js, Tailwind, GitHub Pages, responsive &amp; accessible front-end design</li>
+            <li>Writing: LaTeX &amp; Overleaf, BibTeX pipelines, reference auditing scripts, IEEE/CVPR submission workflows</li>
+            <li>Languages: Bengali (native fluency), Hindi (fluent), English (professional working proficiency)</li>
+          </ul>
+        </div>
+
+        <!-- education -->
+        <div class="custom_projects" id="education">
+          <h2 style="padding-top: 20px;"><b>education</b></h2>
+          <table style="padding-top: 20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding-right: 20px; width:25%;vertical-align:middle">
+                  <img src="assets/img/iiita.png" alt="iiita-logo" width="140" height="140">
+                </td>
+                <td width="75%" valign="middle">
+                  <p><strong>Indian Institute of Information Technology, Allahabad</strong></p>
+                  <p>
+                    <a href="https://www.iiita.ac.in/" rel="external nofollow noopener" target="_blank">Ph.D. in Information Technology (Computer Vision &amp; Pattern Recognition)</a> | 2025 – Present<br>
+                    Prayagraj, Uttar Pradesh, India<br>
+                    <strong>Laboratory:</strong> iMeDIA Lab &nbsp;|&nbsp; <strong>Advisor:</strong> Dr. Mohammed Javed<br>
+                    <strong>Research areas:</strong> Visual document understanding, retrieval-augmented generation, multimodal large language models, document image analysis, benchmark design and reproducibility.
+                  </p>
+                </td>
+              </tr>
+              <!-- TODO: your Master's details -->
+              <tr>
+                <td style="padding-right: 20px; width:25%;vertical-align:middle">
+                  <img src="assets/img/masters.png" alt="masters-logo" width="140" height="140">
+                </td>
+                <td width="75%" valign="middle">
+                  <p><strong>Master's Institute Name</strong></p>
+                  <p>
+                    M.Tech / M.Sc in Computer Science | YYYY – YYYY<br>
+                    City, State, India<br>
+                    <strong>Thesis:</strong> your dissertation title<br>
+                    <strong>Relevant courses:</strong> Machine Learning, Digital Image Processing, Pattern Recognition, Deep Learning
+                  </p>
+                </td>
+              </tr>
+              <!-- TODO: your Bachelor's details -->
+              <tr>
+                <td style="padding-right: 20px; width:25%;vertical-align:middle">
+                  <img src="assets/img/bachelors.png" alt="bachelors-logo" width="140" height="140">
+                </td>
+                <td width="75%" valign="middle">
+                  <p><strong>Bachelor's Institute Name</strong></p>
+                  <p>
+                    B.Tech / B.Sc in Computer Science &amp; Engineering | YYYY – YYYY<br>
+                    City, State, India<br>
+                    <strong>CGPA:</strong> x.xx/10<br>
+                    <strong>Relevant courses:</strong> Data Structures &amp; Algorithms, Operating Systems, Database Systems, Discrete Mathematics, Linear Algebra, Probability &amp; Statistics
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- projects -->
+        <div class="custom_projects" id="projects">
+          <h2 style="padding-top: 20px;"><b>projects</b></h2>
+          <p>For more projects, please visit my <a href="https://github.com/Subrata-CS" rel="external nofollow noopener" target="_blank">Github</a></p>
+          <table style="padding-top: 20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding-right: 20px; width:25%;vertical-align:middle">
+                  <img src="assets/img/ensemble.png" alt="ensemble" width="175">
+                </td>
+                <td width="75%" valign="middle">
+                  <p>
+                    <strong>Diversity, Not Orchestration: Rethinking What Makes Multi-Agent Document Understanding Work</strong><br>
+                    [In preparation for <strong>CVPR 2027</strong>] With Javed M., Doermann D.<br>
+                    Paper / Code <em>(coming soon)</em>
+                  </p>
+                  <p>
+                    A measurement study of multi-agent document VQA. Controlled ensemble composition ablations on DocVQA
+                    and InfographicVQA (n = 2000 each, ANLS) show that heterogeneous-model voting outperforms same-model
+                    self-consistency (+0.008 on DocVQA, p = 0.006; +0.041 on InfographicVQA, p &lt; 0.0001), while
+                    diversity alone is insufficient without member quality.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right: 20px; width:25%;vertical-align:middle">
+                  <img src="assets/img/survey.png" alt="survey" width="175">
+                </td>
+                <td width="75%" valign="middle">
+                  <p>
+                    <strong>Visual Document Understanding with Retrieval-Augmented Generation: A Channel-Centric Survey</strong><br>
+                    [Under review at <strong>IEEE TPAMI</strong>] With Javed M., Doermann D.<br>
+                    Paper / Supplementary <em>(coming soon)</em>
+                  </p>
+                  <p>
+                    A channel-centric taxonomy of how visual, textual and layout information flows through
+                    retrieval-augmented document pipelines. Built from a systematic search of 60 venues, covering
+                    356 references and 47 datasets, with a companion meta-analysis of reported results.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right: 20px; width:25%;vertical-align:middle">
+                  <img src="assets/img/retrieval.png" alt="retrieval" width="175">
+                </td>
+                <td width="75%" valign="middle">
+                  <p>
+                    <strong>Query-Adaptive Re-encoding for Compression-Robust Visual Document Retrieval</strong><br>
+                    [Submitted to <strong>IEEE RAIT 2026</strong>] With Javed M.<br>
+                    Paper / Code <em>(coming soon)</em>
+                  </p>
+                  <p>
+                    Embedding compression degrades local region-level queries roughly 3–4× more than global page-level
+                    queries. We propose query-adaptive re-encoding that recovers accuracy without storing full-precision
+                    multi-vector embeddings, evaluated with ColQwen2-2B and Qwen2-VL-2B-Instruct across five ViDoRe
+                    subsets (2347 pages) on a manually labelled query set (Cohen's κ ≥ 0.70).
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right: 20px; width:25%;vertical-align:middle">
+                  <img src="assets/img/open.png" alt="open" width="175">
+                </td>
+                <td width="75%" valign="middle">
+                  <p>
+                    <strong>Open: A Free Computer Science Learning Platform</strong><br>
+                    [Independent Project] Docusaurus 3, React 19, TypeScript<br>
+                    <a href="https://subrata-cs.github.io/open/" rel="external nofollow noopener" target="_blank">Website</a> /
+                    <a href="https://github.com/Subrata-CS" rel="external nofollow noopener" target="_blank">Code</a>
+                  </p>
+                  <p>
+                    An open curriculum covering 40 computer-science sections and 578 topics across 631 generated pages,
+                    with an inline code runner for 18 languages, a Code Lab notebook, an Ask-AI drawer, a knowledge map
+                    and career roadmaps. Includes automated content generators and link-health checks
+                    (0 build warnings, 93/93 external links verified).
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right: 20px; width:25%;vertical-align:middle">
+                  <img src="assets/img/ssn.png" alt="ssn" width="175">
+                </td>
+                <td width="75%" valign="middle">
+                  <p>
+                    <strong>Subrata Sikha Niketan: Study Material for Competitive Examinations</strong><br>
+                    [Independent Venture] Prayagraj, India<br>
+                    <a href="https://subratasikhaniketan.com/" rel="external nofollow noopener" target="_blank">Website</a>
+                  </p>
+                  <p>
+                    Designed, produced and distributed curated PDF study material for competitive-exam aspirants across
+                    India, together with the web platform that delivers it — covering curriculum design, content
+                    production and the full front-end.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right: 20px; width:25%;vertical-align:middle">
+                  <img src="assets/img/harness.png" alt="harness" width="175">
+                </td>
+                <td width="75%" valign="middle">
+                  <p>
+                    <strong>A Reproducible Evaluation Harness for Multi-Model Document VQA</strong><br>
+                    [Research Infrastructure] PyTorch, HuggingFace, RunPod (RTX PRO 6000)<br>
+                    Code <em>(release planned with the paper)</em>
+                  </p>
+                  <p>
+                    Infrastructure for running large-scale vision–language ensembles over GLM-4.5V-9B, Qwen2.5-VL-7B,
+                    InternVL3-8B and Qwen2-VL-OCR-2B: deterministic seeding, ANLS scoring, paired significance testing,
+                    triplet-composition ablations and resumable multi-hour jobs.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- experience -->
+        <div class="custom_projects" id="experience">
+          <h2 style="padding-top: 20px;"><b>experience</b></h2>
+          <p>For more past work experience, please visit my <a href="https://www.linkedin.com/" rel="external nofollow noopener" target="_blank">LinkedIn</a></p>
+          <table style="padding-top: 20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding-right: 20px; width:25%;vertical-align:middle">
+                  <img src="assets/img/iiita.png" alt="iiita-logo" width="140" height="140">
+                </td>
+                <td width="75%" valign="middle">
+                  <p>
+                    <strong>Research Scholar</strong><br>
+                    <a href="https://www.iiita.ac.in/" rel="external nofollow noopener" target="_blank">IIIT Allahabad — iMeDIA Laboratory</a> | 2025 – Present
+                  </p>
+                  <p>
+                    Leading research on visual document understanding and retrieval-augmented generation. Designed and
+                    ran large-scale multimodal ensemble experiments on document VQA benchmarks, built the evaluation and
+                    statistical testing pipeline end to end, and authored a systematic survey of the field spanning
+                    356 references and 47 datasets.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right: 20px; width:25%;vertical-align:middle">
+                  <img src="assets/img/teaching.png" alt="teaching" width="140" height="140">
+                </td>
+                <td width="75%" valign="middle">
+                  <p>
+                    <strong>Teaching &amp; Course Material Development</strong><br>
+                    IIIT Allahabad | 2025 – Present
+                  </p>
+                  <p>
+                    Developed graduate lecture material for courses taught by Dr. Mohammed Javed, including decks on
+                    self-attention, transformer architectures and the mathematics behind attention. Supported students
+                    with practical deep-learning assignments and experiment setup on GPU infrastructure.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right: 20px; width:25%;vertical-align:middle">
+                  <img src="assets/img/ssn_logo.png" alt="ssn-logo" width="140" height="140">
+                </td>
+                <td width="75%" valign="middle">
+                  <p>
+                    <strong>Founder</strong><br>
+                    <a href="https://subratasikhaniketan.com/" rel="external nofollow noopener" target="_blank">Subrata Sikha Niketan</a> | Prayagraj, India
+                  </p>
+                  <p>
+                    Founded and run an educational content platform producing structured study notes for competitive-exam
+                    aspirants, handling curriculum design, content production, distribution and the web platform.
+                  </p>
+                </td>
+              </tr>
+              <!-- TODO: earlier internships / industry roles go here as another <tr> -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- interests -->
+        <div class="misc" id="misc">
+          <div style="padding-top: 20px;">
+            <h2><b>interests/ hobbies</b></h2>
+          </div>
+          <div class="row" style="padding-top: 20px;">
+            <div class="col-md-4 portfolio-item" style="text-align: center;">
+              <img class="img-responsive" src="assets/img/hobby_teaching.jpg" alt="teaching" width="230" height="230">
+              <br><p1 style="padding-top: 10px;"><strong>Teaching</strong>
+              <br><br>Explaining hard ideas simply is my favourite kind of problem. Whether it is attention mathematics for a graduate class or a first algorithms lesson for an exam aspirant, I enjoy building material people can actually learn from.</p1>
+            </div>
+            <div class="col-md-4 portfolio-item" style="text-align: center;">
+              <img class="img-responsive" src="assets/img/hobby_building.jpg" alt="building" width="230" height="230">
+              <br><p1 style="padding-top: 10px;"><strong>Building for the Web</strong>
+              <br><br>I like shipping small, fast, accessible websites. Most of my side projects start as a tool I wanted for myself and end up as something I can hand to a student.</p1>
+            </div>
+            <div class="col-md-4 portfolio-item" style="text-align: center;">
+              <img class="img-responsive" src="assets/img/hobby_reading.jpg" alt="reading" width="230" height="230">
+              <br><p1 style="padding-top: 10px;"><strong>Reading &amp; Writing</strong>
+              <br><br>Bengali literature, and long-form writing about how research actually gets done. I keep notes on every experiment that failed — they usually explain the ones that worked.</p1>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="fixed-bottom">
+    <div class="container mt-0">
+      &copy; Copyright <span id="year">2026</span> Subrata Pramanik. Last updated: <span id="last-updated">September 09, 2026</span>.
+    </div>
+  </footer>
+
+  <!-- Same JS stack as the reference site -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+  <script>
+  /* ===================================================================
+     Theme toggle, scroll progress, scrollspy
+     =================================================================== */
+  (function () {
+    "use strict";
+
+    /* ---- theme ---- */
+    function setTheme(t) {
+      try { localStorage.setItem('theme', t); } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
+    }
+    var toggle = document.getElementById('light-toggle');
+    function flip() {
+      setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    toggle.addEventListener('click', flip);
+    toggle.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
+    });
+
+    /* ---- scroll progress bar ---- */
+    var progress = document.getElementById('progress');
+    var bar = document.querySelector('.progress-bar');
+    function onScroll() {
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+      progress.value = pct;
+      if (bar) bar.style.width = pct + '%';
+    }
+    progress.max = 100;
+
+    /* ---- scrollspy: mark the section you are looking at ---- */
+    var items = [].slice.call(document.querySelectorAll('.navbar-nav .nav-item'));
+    var targets = items.map(function (li) {
+      var a = li.querySelector('a');
+      return a ? document.querySelector(a.getAttribute('href')) : null;
+    });
+    function spy() {
+      var cur = 0;
+      for (var i = 0; i < targets.length; i++) {
+        if (targets[i] && targets[i].getBoundingClientRect().top <= 120) cur = i;
+      }
+      items.forEach(function (li, i) { li.classList.toggle('active', i === cur); });
+    }
+
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () { onScroll(); spy(); ticking = false; });
+        ticking = true;
+      }
+    }, { passive: true });
+    onScroll(); spy();
+
+    /* ---- smooth scroll for the nav ---- */
+    document.querySelectorAll('.navbar-nav a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var el = document.querySelector(a.getAttribute('href'));
+        if (!el) return;
+        e.preventDefault();
+        window.scrollTo({ top: el.offsetTop - 66, behavior: 'smooth' });
+        var open = document.querySelector('.navbar-collapse.show');
+        if (open && window.jQuery) window.jQuery(open).collapse('hide');
+      });
+    });
+
+    /* ---- missing images become labelled placeholders, never broken icons ---- */
+    document.querySelectorAll('img[src^="assets/"]').forEach(function (img) {
+      img.addEventListener('error', function () {
+        var w = img.getAttribute('data-w') || img.getAttribute('width') || 175;
+        var h = img.getAttribute('data-h') || img.getAttribute('height') || w;
+        var box = document.createElement('div');
+        box.className = 'img-missing';
+        box.style.width = (String(w).indexOf('%') > -1 ? w : w + 'px');
+        box.style.height = h + 'px';
+        box.style.maxWidth = '100%';
+        box.textContent = img.getAttribute('src');
+        img.replaceWith(box);
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  })();
+  </script>
+
+  <script>
+  /* ===================================================================
+     LIVE LAYER — view counter, GitHub stats, clock, last-updated date
+     =================================================================== */
+  (function () {
+    "use strict";
+
+    /* ========================= CONFIG =========================
+       Ei koyekta line bhorle sob live hoye jabe.                  */
+    var CFG = {
+      /* GoatCounter code. Free account: https://www.goatcounter.com
+         Sign up -> code pabo, e.g. "subrata" -> subrata.goatcounter.com
+         Tarpor Settings e "Allow adding visitor counts on your website"
+         ON korte hobe, noile counter blank thakbe.                  */
+      goatcounter: "",
+
+      github: "Subrata-CS",                    /* GitHub username        */
+      repo: "Subrata-CS.github.io",            /* this website's repo    */
+      fallbackNamespace: "subrata-pramanik-site",
+
+      /* Email, percent-encoded so scrapers can't harvest it.
+         Plain text likhleo kaj korbe.                              */
+      emailUser: "%73%75%62%72%61%74%61",              /* subrata     */
+      emailHost: "%69%69%69%74%61.%61%63.%69%6E"       /* iiita.ac.in */
+    };
+    /* ======================= CONFIG SHESH ====================== */
+
+    var $ = function (id) { return document.getElementById(id); };
+    function show(id) { var e = $(id); if (e) e.hidden = false; }
+
+    /* email */
+    var mail = $('email-link');
+    if (mail) mail.setAttribute('href', 'mailto:' + CFG.emailUser + '@' + CFG.emailHost);
+
+    /* count-up animation */
+    function setNumber(el, value) {
+      if (!el) return;
+      var target = Number(String(value).replace(/[^0-9]/g, ''));
+      if (!isFinite(target)) { el.textContent = value; return; }
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.textContent = target.toLocaleString('en-IN'); return;
+      }
+      var start = performance.now();
+      (function step(now) {
+        var p = Math.min((now - start) / 900, 1);
+        p = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * p).toLocaleString('en-IN');
+        if (p < 1) requestAnimationFrame(step);
+      })(start);
+    }
+
+    /* sessionStorage cache, to stay under GitHub's 60 req/hour limit */
+    function cached(key, ttl, fetcher) {
+      var now = Date.now(), hit = null;
+      try {
+        var raw = sessionStorage.getItem(key);
+        if (raw) { var o = JSON.parse(raw); if (now - o.t < ttl) hit = o.v; }
+      } catch (e) {}
+      if (hit !== null) return Promise.resolve(hit);
+      return fetcher().then(function (v) {
+        try { sessionStorage.setItem(key, JSON.stringify({ t: now, v: v })); } catch (e) {}
+        return v;
+      });
+    }
+
+    /* ---- 1. profile views ---- */
+    function goat() {
+      if (!CFG.goatcounter) return Promise.reject();
+      var base = 'https://' + CFG.goatcounter + '.goatcounter.com';
+      if (!window.__gcLoaded) {
+        window.__gcLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://gc.zgo.at/count.js';
+        s.setAttribute('data-goatcounter', base + '/count');
+        document.body.appendChild(s);
+      }
+      /* "/" = this single page. Site-wide total chaile "TOTAL" boshan. */
+      return fetch(base + '/counter/' + encodeURIComponent('/') + '.json', { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+        .then(function (d) { if (d && d.count !== undefined) return d.count; throw 0; });
+    }
+
+    function fallback() {
+      if (!CFG.fallbackNamespace) return Promise.reject();
+      return fetch('https://api.counterapi.dev/v1/' + encodeURIComponent(CFG.fallbackNamespace) + '/views/up')
+        .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+        .then(function (d) { if (d && d.count !== undefined) return d.count; throw 0; });
+    }
+
+    function views() {
+      goat().catch(fallback).then(function (c) {
+        setNumber($('views-count'), c); show('stat-views');
+      }).catch(function () {});
+    }
+
+    /* ---- 2. GitHub stars + followers ---- */
+    function github() {
+      if (!CFG.github) return;
+      var api = 'https://api.github.com/users/' + encodeURIComponent(CFG.github);
+
+      cached('gh-user', 1800000, function () {
+        return fetch(api).then(function (r) { if (!r.ok) throw 0; return r.json(); });
+      }).then(function (u) {
+        if (u && typeof u.followers === 'number') {
+          setNumber($('followers-count'), u.followers); show('stat-followers');
+        }
+      }).catch(function () {});
+
+      cached('gh-stars', 1800000, function () {
+        return fetch(api + '/repos?per_page=100&sort=updated')
+          .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+          .then(function (l) {
+            if (!Array.isArray(l)) throw 0;
+            return l.reduce(function (s, r) { return s + (r.stargazers_count || 0); }, 0);
+          });
+      }).then(function (n) {
+        if (n > 0) { setNumber($('stars-count'), n); show('stat-stars'); }
+      }).catch(function () {});
+    }
+
+    /* ---- 3. live clock (IST) ---- */
+    function clock() {
+      var el = $('clock');
+      if (!el) return;
+      function tick() {
+        try {
+          el.textContent = new Intl.DateTimeFormat('en-GB', {
+            hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Kolkata'
+          }).format(new Date());
+        } catch (e) {}
+      }
+      tick(); show('stat-clock'); setInterval(tick, 30000);
+    }
+
+    /* ---- 4. last updated, from the latest commit ---- */
+    function lastUpdated() {
+      var el = $('last-updated');
+      if (!el || !CFG.github || !CFG.repo) return;
+      cached('gh-commit', 3600000, function () {
+        return fetch('https://api.github.com/repos/' + encodeURIComponent(CFG.github) +
+                     '/' + encodeURIComponent(CFG.repo) + '/commits?per_page=1')
+          .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+          .then(function (c) { if (!Array.isArray(c) || !c[0]) throw 0; return c[0].commit.committer.date; });
+      }).then(function (iso) {
+        var d = new Date(iso);
+        if (!isNaN(d)) {
+          el.textContent = d.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
+        }
+      }).catch(function () {});
+    }
+
+    views(); github(); clock(); lastUpdated();
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'visible') {
+        goat().catch(fallback).then(function (c) {
+          setNumber($('views-count'), c); show('stat-views');
+        }).catch(function () {});
+      }
+    });
+  })();
+  </script>
+
+</body>
+</html>
