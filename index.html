@@ -116,7 +116,12 @@ img{max-width:100%;display:block;}
    ========================================================================== */
 .intro{background:var(--tint);padding:28px 32px;display:flex;gap:34px;align-items:flex-start;}
 .intro-side{flex:0 0 178px;display:flex;flex-direction:column;align-items:center;gap:14px;}
-.intro-side img{width:178px;border-radius:2px;box-shadow:0 1px 5px rgba(0,0,0,.16);}
+.intro-side img{
+  width:178px;height:214px;
+  object-fit:cover;          /* chhobi chepe na diye crop kore */
+  object-position:54% 12%;   /* mukh ta frame er majhe rakhe */
+  border-radius:2px;box-shadow:0 1px 5px rgba(0,0,0,.16);background:#eee;
+}
 .photo-missing{
   width:178px;height:214px;display:flex;align-items:center;justify-content:center;
   background:#fff;border:1px dashed #d8c4c2;border-radius:2px;
@@ -286,19 +291,18 @@ h1,h2,h3,p,li,td,th,.pub .ttl,.authors{overflow-wrap:break-word;word-break:break
         <div class="intro">
           <div class="intro-side">
             <!-- ==================== CHHOBI ====================
-                 SOB THEKE BHALO UPAY: chhobi ta "photo.jpg" name e save kore
-                 index.html er pashe repo te push kore din. Tahole eta sathe
-                 sathe load hobe, kokhono bhangbe na.
+                 Ekhon Google Drive theke asche (file ta "Anyone with the link"
+                 kora ache, tai kaj korche).
 
-                 Google Drive theke dekhate chaile: Drive-e file ta te
-                 right-click > Share > "Anyone with the link" korte HOBE,
-                 tarpor uporer src ta niche er ta diye badle din:
-                 src="https://drive.google.com/thumbnail?id=1g9acgGGMAMUxbKmSuKXbImo8yMz8fKwl&sz=w1000"
-                 (Drive hotlink slow, ar Google kokhono kokhono block kore.)
+                 AARO NIRBHOR-JOGGO UPAY: chhobi ta "photo.jpg" name e save kore
+                 index.html er pashe repo te push korun, tarpor uporer src ta
+                 sudhu   src="photo.jpg"   kore din. Drive hotlink slow, ar
+                 Google beshi traffic hole majhe majhe block kore dey.
 
-                 File na thakle niche ekta labelled box dekhabe, layout bhangbe na.
+                 Chhobi load na hole niche ekta labelled box dekhabe,
+                 layout kokhono bhangbe na.
                  ================================================ -->
-            <img id="photo" src="photo.jpg" alt="Subrata Pramanik">
+            <img id="photo" src="https://drive.google.com/thumbnail?id=1g9acgGGMAMUxbKmSuKXbImo8yMz8fKwl&sz=w1000" alt="Subrata Pramanik">
             <div class="icons">
               <a href="#" id="mail" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
               <span class="bar">|</span>
