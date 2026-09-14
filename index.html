@@ -1,648 +1,592 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Subrata Pramanik</title>
 <meta name="author" content="Subrata Pramanik">
-<meta name="description" content="Subrata Pramanik — M.Tech + Ph.D. researcher at IIIT Allahabad. Visual Document Understanding with Retrieval-Augmented Generation.">
+<meta name="description" content="Subrata Pramanik — M.Tech + Ph.D. researcher at IIIT Allahabad, working on visual document understanding with retrieval-augmented generation.">
 <meta property="og:title" content="Subrata Pramanik">
 <meta property="og:description" content="M.Tech + Ph.D. researcher at IIIT Allahabad. Visual Document Understanding with Retrieval-Augmented Generation.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236D28D9'/><text x='50' y='71' font-size='58' font-family='Georgia,serif' fill='%23fff' text-anchor='middle'>S</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%238B0000'/><text x='50' y='72' font-size='60' font-family='Georgia,serif' fill='%23fff' text-anchor='middle'>S</text></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
 
 <style>
 /* ==========================================================================
-   PALETTE — white base, one violet→pink accent, plus supporting hues
+   TOKENS
    ========================================================================== */
 :root{
-  --bg:#ffffff;
-  --bg-tint:#faf8ff;
-  --bg-card:#ffffff;
-  --ink:#17161d;
-  --ink-soft:#4b4a5a;
-  --ink-faint:#7c7b8c;
-  --line:#e9e6f2;
-
-  --violet:#6d28d9;
-  --pink:#db2777;
-  --cyan:#0891b2;
-  --amber:#ea580c;
-  --green:#059669;
-
-  --accent:var(--violet);
-  --accent-ink:#ffffff;
-  --grad:linear-gradient(120deg,#6d28d9 0%,#a21caf 45%,#db2777 100%);
-  --shadow:0 1px 2px rgba(23,22,29,.05), 0 8px 24px -12px rgba(109,40,217,.18);
-  --maxw:880px;
-  --pad:24px;
-}
-html[data-theme="dark"]{
-  --bg:#0f0e14;
-  --bg-tint:#16141f;
-  --bg-card:#16141f;
-  --ink:#eceaf3;
-  --ink-soft:#b6b3c6;
-  --ink-faint:#8b88a0;
-  --line:#2a2637;
-  --violet:#a78bfa;
-  --pink:#f472b6;
-  --cyan:#22d3ee;
-  --amber:#fb923c;
-  --green:#34d399;
-  --grad:linear-gradient(120deg,#a78bfa 0%,#d946ef 45%,#f472b6 100%);
-  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(167,139,250,.25);
+  --maroon:#8B0000;
+  --maroon-soft:#a63a3a;
+  --blue:#1772d0;
+  --ink:#282828;
+  --ink-soft:#555;
+  --ink-faint:#888;
+  --page-bg:#efefef;
+  --card:#ffffff;
+  --tint:#fdf1f0;
+  --line:#e5e5e5;
+  --sidebar-w:145px;
+  --gutter:56px;
 }
 
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;scroll-padding-top:88px;}
+html{scroll-behavior:smooth;}
 body{
-  margin:0;background:var(--bg);color:var(--ink);
-  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  font-size:16.5px;line-height:1.68;font-weight:400;
-  -webkit-font-smoothing:antialiased;
-  transition:background-color .25s,color .25s;
+  margin:0;background:var(--page-bg);color:var(--ink);
+  font-family:"Open Sans",Helvetica,Arial,sans-serif;
+  font-size:15px;line-height:1.62;-webkit-font-smoothing:antialiased;
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;animation:none!important;}}
-
-a{color:var(--accent);text-decoration:none;}
-a:hover{text-decoration:underline;text-underline-offset:3px;}
-a:focus-visible,button:focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:3px;}
-strong{font-weight:600;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{animation:none!important;transition:none!important;}}
+a{color:var(--maroon);text-decoration:none;}
+a:hover{text-decoration:underline;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--maroon);outline-offset:2px;}
 p{margin:0 0 15px;}
+h1,h2,h3,h4{font-family:"Oxygen",Helvetica,sans-serif;margin:0;}
+img{max-width:100%;display:block;}
 
 /* ==========================================================================
-   NAVBAR
+   SIDEBAR
    ========================================================================== */
-#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:110;}
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  background:color-mix(in srgb,var(--bg) 88%,transparent);
-  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
-  border-bottom:1px solid transparent;transition:border-color .2s;
+.sidebar{
+  position:fixed;top:0;left:0;bottom:0;width:var(--sidebar-w);
+  background:#fff;z-index:60;display:flex;flex-direction:column;
+  border-right:1px solid var(--line);
 }
-.nav.stuck{border-bottom-color:var(--line);}
-.nav-in{max-width:var(--maxw);margin:0 auto;padding:14px var(--pad);display:flex;align-items:center;gap:18px;}
-.brand{
-  font-family:"Newsreader",Georgia,serif;font-size:1.06rem;font-weight:600;
-  color:var(--ink);letter-spacing:-.01em;margin-right:auto;
-  opacity:0;transform:translateY(3px);pointer-events:none;
-  transition:opacity .22s ease,transform .22s ease;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+.site-title{
+  font-size:1.42rem;font-weight:300;color:var(--maroon);
+  text-align:center;padding:20px 10px 22px;line-height:1.22;
+  border-bottom:1px solid var(--line);
 }
-.brand.reveal{opacity:1;transform:none;pointer-events:auto;}
-.brand:hover{text-decoration:none;color:var(--accent);}
-.links{display:flex;gap:19px;align-items:center;}
-.links a{color:var(--ink-soft);font-size:.93rem;font-weight:450;position:relative;padding:3px 0;}
-.links a:hover{color:var(--accent);text-decoration:none;}
-.links a.on{color:var(--ink);font-weight:600;}
-.links a.on::after{
-  content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;
-  background:var(--grad);border-radius:2px;
+.site-title a{color:inherit;}
+.site-title a:hover{text-decoration:none;}
+.menu{list-style:none;margin:0;padding:0;overflow-y:auto;}
+.menu li{border-bottom:1px solid var(--line);}
+.menu a{
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  padding:17px 6px;color:var(--ink-soft);font-size:.8rem;
+  font-family:"Oxygen",sans-serif;text-align:center;position:relative;
+  transition:background-color .18s,color .18s;
 }
-.iconbtn{background:none;border:none;cursor:pointer;color:var(--ink-soft);font-size:1rem;padding:4px;line-height:1;}
-.iconbtn:hover{color:var(--accent);}
-.burger{display:none;}
-/* long words / URLs never push the layout sideways */
-h1,h2,h3,p,li,td,th,.tag,.meta,.desc{overflow-wrap:break-word;word-break:break-word;}
-.pubwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
-table.pubs{min-width:440px;}
+.menu a:hover{text-decoration:none;color:var(--maroon);background:#fafafa;}
+.menu a i{font-size:1.18rem;color:var(--maroon-soft);transition:color .18s;}
+.menu li.active a{color:var(--maroon);background:#fbf6f6;}
+.menu li.active a i{color:var(--maroon);}
+.menu li.active a::after{
+  content:"";position:absolute;right:-1px;top:0;bottom:0;width:4px;background:var(--maroon);
+}
 
-@media(max-width:800px){
-  .burger{display:block;}
-  .links{
-    display:none;position:absolute;top:100%;left:0;right:0;
-    flex-direction:column;align-items:flex-start;gap:2px;
-    background:var(--bg);border-bottom:1px solid var(--line);padding:10px var(--pad) 16px;
-  }
-  .links.open{display:flex;}
-  .links a{padding:8px 0;width:100%;}
+/* mobile bar */
+.mobilebar{
+  display:none;position:fixed;top:0;left:0;right:0;height:52px;z-index:70;
+  background:#fff;border-bottom:1px solid var(--line);
+  align-items:center;justify-content:space-between;padding:0 16px;
 }
+.mobilebar .mt{font-family:"Oxygen",sans-serif;font-size:1.06rem;color:var(--maroon);}
+.burger{background:none;border:none;font-size:1.2rem;color:var(--maroon);cursor:pointer;padding:6px;}
 
 /* ==========================================================================
-   SHELL + HEADINGS
+   CONTENT SHELL
    ========================================================================== */
-.wrap{max-width:var(--maxw);margin:0 auto;padding:102px var(--pad) 40px;}
-section{margin-bottom:56px;scroll-margin-top:88px;}
-
-.hero{padding:14px 0 4px;}
-h1{
-  font-family:"Newsreader",Georgia,serif;
-  font-size:clamp(2.6rem,7vw,3.6rem);font-weight:500;
-  letter-spacing:-.022em;line-height:1.08;margin:0 0 10px;
-}
-h1 .grad{
-  background:var(--grad);-webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;font-weight:600;
-}
-.tag{color:var(--ink-soft);font-size:1.04rem;margin:0 0 4px;}
-.tag .sep{color:var(--line);margin:0 8px;}
-
-h2{
-  font-family:"Newsreader",Georgia,serif;
-  font-size:1.72rem;font-weight:500;letter-spacing:-.015em;
-  margin:0 0 22px;display:flex;align-items:center;gap:11px;
-}
-h2::before{
-  content:"";width:9px;height:9px;border-radius:3px;
-  background:var(--grad);flex:none;
-}
-h3{font-size:1.03rem;font-weight:600;margin:0 0 3px;letter-spacing:-.008em;}
-
-/* ==========================================================================
-   SOCIAL + LIVE STATS
-   ========================================================================== */
-.social{display:flex;gap:11px;flex-wrap:wrap;margin:24px 0 0;}
-.social a{
-  width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;
-  background:var(--bg-tint);border:1px solid var(--line);color:var(--ink-soft);
-  font-size:1.05rem;transition:transform .16s,color .16s,border-color .16s,box-shadow .16s;
-}
-.social a:hover{
-  transform:translateY(-2px);color:var(--accent-ink);text-decoration:none;
-  background:var(--grad);border-color:transparent;box-shadow:var(--shadow);
-}
-
-/* ==========================================================================
-   ENTRIES — colour chip on the left, content on the right
-   ========================================================================== */
-.entry{display:flex;gap:20px;padding:18px 0;border-top:1px solid var(--line);}
-.entry:first-of-type{border-top:none;padding-top:4px;}
-.chip{
-  flex:none;width:58px;height:58px;border-radius:15px;
-  display:flex;align-items:center;justify-content:center;
-  font-weight:700;font-size:.78rem;letter-spacing:.02em;color:#fff;
-  text-align:center;line-height:1.15;padding:5px;box-shadow:var(--shadow);
-}
-.c-violet{background:linear-gradient(135deg,#6d28d9,#8b5cf6);}
-.c-pink  {background:linear-gradient(135deg,#be185d,#ec4899);}
-.c-cyan  {background:linear-gradient(135deg,#0e7490,#22d3ee);}
-.c-amber {background:linear-gradient(135deg,#c2410c,#fb923c);}
-.c-green {background:linear-gradient(135deg,#047857,#10b981);}
-.body{flex:1;min-width:0;}
-.meta{color:var(--ink-faint);font-size:.9rem;margin:0 0 9px;}
-.meta .dotsep{margin:0 7px;opacity:.5;}
-.desc{margin:0;color:var(--ink-soft);font-size:.97rem;}
-.pill{
-  display:inline-block;padding:1px 9px;border-radius:20px;font-size:.74rem;
-  font-weight:600;letter-spacing:.02em;vertical-align:middle;
-}
-.pill-now{background:color-mix(in srgb,var(--green) 14%,transparent);color:var(--green);}
-.pill-past{background:var(--bg-tint);color:var(--ink-faint);border:1px solid var(--line);}
-
-/* ==========================================================================
-   PUBLICATIONS TABLE
-   ========================================================================== */
-.pubwrap{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg-card);}
-table.pubs{width:100%;border-collapse:collapse;font-size:.94rem;}
-table.pubs th{
-  text-align:left;padding:11px 14px;background:var(--bg-tint);
-  color:var(--ink-faint);font-weight:600;font-size:.77rem;
-  text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--line);
-}
-table.pubs td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-soft);}
-table.pubs tr:last-child td{border-bottom:none;}
-.empty{padding:26px 16px;text-align:center;color:var(--ink-faint);font-size:.94rem;}
-.rank{
-  display:inline-block;min-width:30px;text-align:center;padding:1px 8px;border-radius:6px;
-  font-weight:700;font-size:.78rem;background:var(--grad);color:#fff;
-}
-.type-j{color:var(--cyan);font-weight:600;}
-.type-c{color:var(--amber);font-weight:600;}
-
-/* ==========================================================================
-   SKILLS
-   ========================================================================== */
-.skill-row{display:flex;gap:14px;padding:11px 0;border-top:1px solid var(--line);flex-wrap:wrap;}
-.skill-row:first-child{border-top:none;}
-.skill-label{flex:0 0 152px;font-weight:600;font-size:.9rem;color:var(--ink);}
-.tags{display:flex;flex-wrap:wrap;gap:6px;flex:1;min-width:220px;}
-.tag-item{
-  padding:2px 10px;border-radius:20px;font-size:.81rem;
-  background:var(--bg-tint);border:1px solid var(--line);color:var(--ink-soft);
-}
-
-/* ==========================================================================
-   INTERESTS
-   ========================================================================== */
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-@media(max-width:640px){.grid2{grid-template-columns:1fr;}}
-@media(max-width:560px){
-  :root{--pad:20px;}
-  .skill-label{flex:1 1 100%;margin-bottom:2px;}
-  .tags{min-width:0;}
-  .entry{gap:14px;}
-  .chip{width:50px;height:50px;border-radius:13px;font-size:.72rem;}
-  .social a{width:40px;height:40px;}
-  .foot-in{justify-content:flex-start;}
+.shell{margin-left:var(--sidebar-w);padding:18px 26px 40px 30px;}
+.bracket{position:relative;padding-top:30px;padding-left:22px;}
+.bracket::before{
+  content:"";position:absolute;left:0;top:0;width:108px;height:104px;
+  border-left:3px solid var(--maroon);border-top:3px solid var(--maroon);
 }
 .card{
-  border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--bg-card);
-  transition:transform .18s,box-shadow .18s,border-color .18s;
+  background:var(--card);box-shadow:0 1px 4px rgba(0,0,0,.09);
+  padding:34px var(--gutter) 42px;min-height:calc(100vh - 96px);
 }
-.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--accent) 30%,var(--line));}
-.card .ic{
-  width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:1.1rem;margin-bottom:14px;
+
+/* page switching */
+.page{display:none;}
+.page.on{display:block;animation:fade .34s ease both;}
+@keyframes fade{from{opacity:0;transform:translateY(9px);}to{opacity:1;transform:none;}}
+
+/* ==========================================================================
+   INTRO BLOCK
+   ========================================================================== */
+.intro{background:var(--tint);padding:28px 32px;display:flex;gap:34px;align-items:flex-start;}
+.intro-side{flex:0 0 178px;display:flex;flex-direction:column;align-items:center;gap:14px;}
+.intro-side img{width:178px;border-radius:2px;box-shadow:0 1px 5px rgba(0,0,0,.16);}
+.photo-missing{
+  width:178px;height:214px;display:flex;align-items:center;justify-content:center;
+  background:#fff;border:1px dashed #d8c4c2;border-radius:2px;
+  color:#b59a98;font-size:.76rem;text-align:center;padding:10px;
 }
-.card h3{margin-bottom:7px;}
-.card p{margin:0;color:var(--ink-soft);font-size:.95rem;}
+.intro-body{flex:1;min-width:0;}
+.intro-body p:last-child{margin-bottom:0;}
+
+.icons{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px;max-width:132px;row-gap:8px;}
+.icons a{color:var(--maroon);font-size:1.3rem;line-height:1;padding:3px 4px;}
+.icons a:hover{color:#c00;text-decoration:none;}
+.icons .bar{color:#d9c7c5;font-size:.95rem;}
+.cvtag{
+  font-family:"Oxygen",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.04em;
+  border:2px solid var(--maroon);border-radius:3px;padding:0 4px;color:var(--maroon);
+}
+
+/* ==========================================================================
+   HEADINGS
+   ========================================================================== */
+h2.sec{font-size:1.42rem;font-weight:400;color:var(--ink);margin:0 0 16px;}
+h2.center{
+  text-align:center;font-size:1.72rem;font-weight:400;
+  margin:38px 0 24px;padding-top:26px;border-top:1px solid var(--line);
+}
+h1.pagetitle{
+  text-align:center;color:var(--maroon);font-size:1.62rem;font-weight:400;margin:0 0 30px;
+}
+
+/* two column block */
+.cols{display:flex;gap:54px;margin-top:38px;}
+.cols > div{flex:1;min-width:0;}
+@media(max-width:860px){.cols{flex-direction:column;gap:30px;}}
+
+ul.plain{margin:0;padding-left:19px;}
+ul.plain li{margin-bottom:7px;color:var(--ink-soft);}
+
+/* education / experience items */
+.eitem{margin-bottom:15px;}
+.eitem .t{font-weight:600;font-size:.97rem;color:var(--ink);display:flex;gap:9px;align-items:baseline;}
+.eitem .t i{color:var(--ink);font-size:.95rem;flex:none;}
+.eitem .s{color:var(--ink-faint);font-size:.9rem;padding-left:23px;}
+.eitem .x{color:var(--ink-soft);font-size:.92rem;padding-left:23px;margin-top:3px;}
+
+/* gradient hairline above Recent News, like the reference */
+hr.grad-rule{
+  border:0;height:1px;margin:44px 0 0;
+  background-image:linear-gradient(to right,rgba(0,0,0,0),var(--maroon),rgba(0,0,0,0));
+}
+.newslist{margin-top:6px;}
+
+/* news */
+.news{display:flex;gap:22px;padding:9px 0;border-bottom:1px solid #f2f2f2;}
+.news:last-child{border-bottom:none;}
+.news .d{flex:0 0 92px;color:var(--ink-faint);font-size:.86rem;}
+.news .c{flex:1;color:var(--ink-soft);font-size:.93rem;}
+
+/* ==========================================================================
+   PUBLICATIONS
+   ========================================================================== */
+.pub{margin-bottom:26px;}
+.pub .ttl{color:var(--maroon);font-weight:700;font-size:.98rem;display:inline;}
+.pub .authors{color:var(--ink);font-size:.94rem;margin:3px 0 2px;}
+.pub .links{font-size:.92rem;color:#bbb;}
+.pub .links a{color:var(--maroon);}
+.venue{
+  display:inline-block;vertical-align:middle;margin-left:9px;
+  background:var(--blue);color:#fff;border-radius:4px;
+  font-family:"Oxygen",sans-serif;font-size:.68rem;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;padding:3px 9px;white-space:nowrap;
+}
+.venue.grey{background:#8a94a0;}
+.emptybox{
+  border:1px dashed #d8cfce;background:#fdfafa;border-radius:5px;
+  padding:22px 20px;color:var(--ink-faint);font-size:.94rem;
+}
+.emptybox b{color:var(--maroon);}
+
+/* ==========================================================================
+   SKILL / TAG ROWS
+   ========================================================================== */
+.srow{display:flex;gap:16px;padding:9px 0;border-bottom:1px solid #f2f2f2;flex-wrap:wrap;}
+.srow:last-child{border-bottom:none;}
+.srow .k{flex:0 0 150px;font-weight:600;font-size:.92rem;}
+.srow .v{flex:1;min-width:200px;color:var(--ink-soft);font-size:.93rem;}
 
 /* ==========================================================================
    FOOTER
    ========================================================================== */
-footer{border-top:1px solid var(--line);margin-top:20px;}
-.foot-in{
-  max-width:var(--maxw);margin:0 auto;padding:22px var(--pad) 30px;
-  display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
-  color:var(--ink-faint);font-size:.87rem;
+.foot{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);
+  color:var(--ink-faint);font-size:.85rem;text-align:center;}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+h1,h2,h3,p,li,td,th,.pub .ttl,.authors{overflow-wrap:break-word;word-break:break-word;}
+
+@media(max-width:900px){
+  :root{--gutter:30px;}
+  .sidebar{
+    transform:translateX(-100%);transition:transform .25s ease;
+    top:52px;width:190px;border-right:1px solid var(--line);box-shadow:2px 0 10px rgba(0,0,0,.08);
+  }
+  .sidebar.open{transform:none;}
+  .site-title{display:none;}
+  .mobilebar{display:flex;}
+  .shell{margin-left:0;padding:66px 14px 30px;}
+  .card{min-height:0;padding:26px var(--gutter) 34px;}
+  .menu a{flex-direction:row;justify-content:flex-start;gap:12px;padding:14px 18px;font-size:.9rem;}
+  .menu li.active a::after{display:none;}
+  .menu li.active a{border-left:4px solid var(--maroon);padding-left:14px;}
 }
-.foot-in .rule{height:2px;width:34px;background:var(--grad);border-radius:2px;}
+@media(max-width:640px){
+  :root{--gutter:20px;}
+  .intro{flex-direction:column;padding:22px;gap:20px;}
+  .intro-side{flex:none;width:100%;}
+  .bracket::before{width:70px;height:38px;}
+  .bracket{padding-top:18px;}
+  .srow .k{flex:1 1 100%;}
+}
 </style>
 </head>
 
 <body>
 
-<div id="bar"></div>
+<!-- mobile top bar -->
+<div class="mobilebar">
+  <span class="mt">Subrata Pramanik</span>
+  <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+</div>
 
-<nav class="nav" id="nav">
-  <div class="nav-in">
-    <a class="brand" href="#top">Subrata Pramanik</a>
-    <button class="iconbtn burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
-    <div class="links" id="links">
-      <a href="#about">about</a>
-      <a href="#education">education</a>
-      <a href="#publications">publications</a>
-      <a href="#projects">projects</a>
-      <a href="#experience">experience</a>
-      <a href="#skills">skills</a>
-      <a href="#interests">interests</a>
-    </div>
-    <button class="iconbtn" id="theme" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-  </div>
+<!-- sidebar -->
+<nav class="sidebar" id="sidebar">
+  <div class="site-title"><a href="#home">Subrata<br>Pramanik</a></div>
+  <ul class="menu" id="menu">
+    <li data-page="home"><a href="#home"><i class="fa-regular fa-id-card"></i><span>Home</span></a></li>
+    <li data-page="publications"><a href="#publications"><i class="fa-regular fa-newspaper"></i><span>Publications</span></a></li>
+    <li data-page="experience"><a href="#experience"><i class="fa-regular fa-clock"></i><span>Experience</span></a></li>
+    <li data-page="projects"><a href="#projects"><i class="fa-solid fa-code"></i><span>Projects</span></a></li>
+    <li data-page="misc"><a href="#misc"><i class="fa-regular fa-compass"></i><span>Misc</span></a></li>
+  </ul>
 </nav>
 
-<main class="wrap" id="top">
+<div class="shell">
+  <div class="bracket">
+    <div class="card">
 
-  <!-- ===================== ABOUT ===================== -->
-  <section id="about">
-    <div class="hero">
-      <h1><span class="grad">Subrata</span> Pramanik</h1>
-      <p class="tag">
-        <a href="https://www.iiita.ac.in/" target="_blank" rel="noopener">IIIT Allahabad</a>
-        <span class="sep">|</span>
-        Visual Document Understanding with Retrieval-Augmented Generation
-      </p>
-    </div>
+      <!-- ============================ HOME ============================ -->
+      <div class="page on" id="page-home">
 
-    <p>
-      I am an <strong>M.Tech + Ph.D. researcher</strong> at the
-      <a href="https://www.iiita.ac.in/" target="_blank" rel="noopener">Indian Institute of Information Technology, Allahabad</a>,
-      working in the <a href="https://imedia.iiita.ac.in/" target="_blank" rel="noopener">iMeDIA Laboratory</a> under
-      Dr. <a href="https://sites.google.com/site/mohammedjaved2016" target="_blank" rel="noopener">Mohammed Javed</a>,
-      with external supervision from Prof.
-      <a href="https://en.wikipedia.org/wiki/David_Doermann" target="_blank" rel="noopener">David Doermann</a>
-      (University at Buffalo).
-    </p>
+        <div class="intro">
+          <div class="intro-side">
+            <!-- photo.jpg file ta index.html er pashe rakhun.
+                 File na thakle niche ekta labelled box dekhabe, layout bhangbe na. -->
+            <img id="photo" src="photo.jpg" alt="Subrata Pramanik">
+            <div class="icons">
+              <a href="#" id="mail" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+              <span class="bar">|</span>
+              <a href="https://www.linkedin.com/in/sp4532/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <span class="bar">|</span>
+              <a href="https://github.com/Subrata-CS" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <span class="bar">|</span>
+              <a href="https://orcid.org/0009-0001-5676-4312" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="ai ai-orcid"></i></a>
 
-    <p>
-      My research is on <strong>visual document understanding with retrieval-augmented generation</strong> — teaching
-      multimodal models to read a document the way a person does: finding the right page or region first, then reasoning
-      over what is actually there. I am interested in how visual, textual and layout information should flow through a
-      retrieval pipeline, and in careful measurement: which part of a complex system is genuinely responsible for a
-      result, and which part only appears to be.
-    </p>
+              <!-- =================================================================
+                   NISKRIYO — chalu korte "demo" ta asol link diye badle, tarpor
+                   sei line ta ei comment er bhitor theke ber kore anben.
 
-    <p>
-      Outside research, I built <a href="https://subrata-cs.github.io/open/" target="_blank" rel="noopener">Open</a>,
-      a free computer-science learning platform. I enjoy making difficult material approachable, which is also what I do
-      as a teaching assistant.
-    </p>
+                   1) GOOGLE SCHOLAR (paper publish howar por):
+                   <span class="bar">|</span>
+                   <a href="demo" target="_blank" rel="noopener" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
 
-    <p>
-      If you are a student getting started in computer vision, or a researcher working on document AI, feel free to
-      get in touch.
-    </p>
+                   2) CV (CV pdf ta repo te push korar por):
+                   <span class="bar">|</span>
+                   <a href="demo" title="CV"><span class="cvtag">CV</span></a>
+                   ================================================================= -->
+            </div>
+          </div>
 
-    <div class="social">
-      <a href="#" id="mail" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/sp4532/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://github.com/Subrata-CS" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://orcid.org/0009-0001-5676-4312" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="ai ai-orcid"></i></a>
+          <div class="intro-body">
+            <p>
+              Hi, I am <strong>Subrata Pramanik</strong>, an M.Tech + Ph.D. researcher in the
+              <a href="https://www.iiita.ac.in/" target="_blank" rel="noopener">Indian Institute of Information Technology, Allahabad</a>,
+              where I work in the <a href="https://imedia.iiita.ac.in/" target="_blank" rel="noopener">iMeDIA Laboratory</a>
+              advised by Dr. <a href="https://sites.google.com/site/mohammedjaved2016" target="_blank" rel="noopener">Mohammed Javed</a>,
+              with external supervision from Prof.
+              <a href="https://en.wikipedia.org/wiki/David_Doermann" target="_blank" rel="noopener">David Doermann</a>
+              at the University at Buffalo.
+            </p>
+            <p>
+              My research is on <strong>visual document understanding with retrieval-augmented generation</strong> —
+              teaching multimodal models to read a document the way a person does: finding the right page or region
+              first, then reasoning over what is actually there. I am interested in how visual, textual and layout
+              information should flow through a retrieval pipeline, and in careful measurement: which part of a complex
+              system is genuinely responsible for a result, and which part only appears to be.
+            </p>
+            <p>
+              Alongside research I am a teaching assistant at IIIT Allahabad, I built
+              <a href="https://subrata-cs.github.io/open/" target="_blank" rel="noopener">Open</a>, a free
+              computer-science learning platform, and I founded
+              <a href="https://subratasikhaniketan.com/" target="_blank" rel="noopener">Subrata Sikha Niketan</a>,
+              an education platform for students preparing for competitive examinations.
+            </p>
+          </div>
+        </div>
 
-      <!-- ==========================================================================
-           NISKRIYO KORA ACHHE — chalu korte hole "demo" ta asol link diye badle,
-           tarpor sei line ta comment er bhitor theke ber kore anben.
+        <div class="cols">
+          <div>
+            <h2 class="sec">Research Interests</h2>
+            <ul class="plain">
+              <li>Visual Document Understanding</li>
+              <li>Retrieval-Augmented Generation</li>
+              <li>Document Image Analysis</li>
+              <li>Multimodal Large Language Models</li>
+              <li>Vision&ndash;Language Models</li>
+              <li>Multimodal Retrieval</li>
+            </ul>
+          </div>
 
-           1) GOOGLE SCHOLAR — paper publish hole profile link ta bosan:
-           <a href="demo" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          <div>
+            <h2 class="sec">Education</h2>
+            <div class="eitem">
+              <div class="t"><i class="fas fa-graduation-cap"></i>M.Tech + Ph.D. in Information Technology, 2024&ndash;2028</div>
+              <div class="s">Indian Institute of Information Technology, Allahabad</div>
+              <div class="x">Visual Document Understanding with Retrieval-Augmented Generation</div>
+            </div>
 
-           2) CV — Subrata_Pramanik_CV.pdf ta repo-r assets/pdf/ folder e push korar por:
-           <a href="demo" title="CV" aria-label="Curriculum Vitae"><i class="fas fa-file-alt"></i></a>
+            <!-- TODO: B.Tech / graduation details add korte chaile ei block ta copy korun:
+            <div class="eitem">
+              <div class="t"><i class="fas fa-graduation-cap"></i>B.Tech in Computer Science, 20XX&ndash;20XX</div>
+              <div class="s">College Name</div>
+            </div>
+            -->
+          </div>
+        </div>
 
-           Duitor jaygay "demo" lekha ache. Ei duto icon jotokkhon comment er bhitore,
-           totokkhon website e dekhabe na — tai kono broken link o hobe na.
-           ========================================================================== -->
-    </div>
+        <hr class="grad-rule">
+        <h2 class="center" style="margin-top:0;padding-top:0;border-top:none">Recent News</h2>
 
-  </section>
+        <div class="newslist">
+          <!-- ===============================================================
+               Notun news add korte ei 4 line er block ta copy kore SOB THEKE
+               UPORE bosan (notun ta age thakbe):
 
-  <!-- ===================== EDUCATION ===================== -->
-  <section id="education">
-    <h2>Education</h2>
+               <div class="news">
+                 <div class="d">Mon YYYY</div>
+                 <div class="c">Ja hoyeche seta ekhane likhun.</div>
+               </div>
+               =============================================================== -->
 
-    <div class="entry">
-      <div class="chip c-violet">IIIT<br>A</div>
-      <div class="body">
-        <h3>Indian Institute of Information Technology, Allahabad</h3>
-        <p class="meta">
-          M.Tech + Ph.D. (Integrated), Information Technology
-          <span class="dotsep">•</span> 2024 – 2028 <span class="pill pill-now">ongoing</span><br>
-          Prayagraj, Uttar Pradesh, India
-        </p>
-        <p class="desc">
-          <strong>Research topic:</strong> Visual Document Understanding with Retrieval-Augmented Generation.<br>
-          <strong>Laboratory:</strong> <a href="https://imedia.iiita.ac.in/" target="_blank" rel="noopener">iMeDIA Lab</a><br>
-          <strong>Supervisor:</strong> Dr. <a href="https://sites.google.com/site/mohammedjaved2016" target="_blank" rel="noopener">Mohammed Javed</a><br>
-          <strong>External supervisor:</strong> Prof. <a href="https://en.wikipedia.org/wiki/David_Doermann" target="_blank" rel="noopener">David Doermann</a>, University at Buffalo
-        </p>
+          <div class="news">
+            <div class="d">2024</div>
+            <div class="c">Joined <a href="https://www.iiita.ac.in/" target="_blank" rel="noopener">IIIT Allahabad</a>
+              for the M.Tech + Ph.D. programme, working in the
+              <a href="https://imedia.iiita.ac.in/" target="_blank" rel="noopener">iMeDIA Laboratory</a>
+              with Dr. <a href="https://sites.google.com/site/mohammedjaved2016" target="_blank" rel="noopener">Mohammed Javed</a>.</div>
+          </div>
+
+          <div class="news">
+            <div class="d">2024</div>
+            <div class="c">Started as a Teaching Assistant for <strong>Problem Solving with Programming</strong>
+              and <strong>Data Analytics</strong> at IIIT Allahabad.</div>
+          </div>
+
+          <div class="news">
+            <div class="d">Mar 2024</div>
+            <div class="c">Completed my tenure at <strong>Tata Consultancy Services</strong> as an
+              Assistant System Engineer.</div>
+          </div>
+
+          <!-- TODO: ei duitor TARIKH ami jani na, tai "20XX" rekhechi.
+               Asol mash/bochor bosiye diben, ar sob theke notun ta upore niye jaben. -->
+          <div class="news">
+            <div class="d">20XX</div>
+            <div class="c">Launched <a href="https://subrata-cs.github.io/open/" target="_blank" rel="noopener">Open</a>,
+              a free computer-science learning platform.</div>
+          </div>
+
+          <div class="news">
+            <div class="d">20XX</div>
+            <div class="c">Founded <a href="https://subratasikhaniketan.com/" target="_blank" rel="noopener">Subrata Sikha Niketan</a>,
+              an education platform for competitive-exam aspirants.</div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- TODO: B.Tech / graduation details add korte chaile ei block ta copy kore niche bosan:
-    <div class="entry">
-      <div class="chip c-cyan">ABC</div>
-      <div class="body">
-        <h3>College Name</h3>
-        <p class="meta">B.Tech in Computer Science <span class="dotsep">•</span> 20XX – 20XX<br>City, State</p>
+      <!-- ========================= PUBLICATIONS ========================= -->
+      <div class="page" id="page-publications">
+        <h1 class="pagetitle">Publications and Preprints</h1>
+
+        <div class="emptybox">
+          <b>No publications yet.</b> Research is in progress &mdash; papers will appear here as they are accepted.
+          Each entry will show the year, title, type (journal or conference) and venue rank.
+        </div>
+
+        <!-- ===================================================================
+             Paper accept hole ei template ta copy kore uporer emptybox ar table
+             er jaygay bosan. Venue pill er rong: default neel, preprint holo
+             <span class="venue grey">.
+
+        <div class="pub">
+          <span class="ttl"><a href="PAPER_LINK">Paper Title Goes Here</a></span>
+          <span class="venue">CVPR 2027</span>
+          <div class="authors">Subrata Pramanik, Mohammed Javed, David Doermann</div>
+          <div class="links">
+            <a href="#">Abstract</a> | <a href="#">ArXiv</a> | <a href="#">Code</a> | <a href="#">Poster</a>
+          </div>
+        </div>
+
+        <div class="pub">
+          <span class="ttl"><a href="PAPER_LINK">Another Paper Title</a></span>
+          <span class="venue grey">Preprint</span>
+          <div class="authors">Subrata Pramanik, Mohammed Javed</div>
+          <div class="links"><a href="#">Abstract</a> | <a href="#">ArXiv</a></div>
+        </div>
+             =================================================================== -->
       </div>
-    </div>
-    -->
-  </section>
 
-  <!-- ===================== PUBLICATIONS ===================== -->
-  <section id="publications">
-    <h2>Publications</h2>
-    <div class="pubwrap">
-      <table class="pubs">
-        <thead>
-          <tr>
-            <th style="width:74px">Year</th>
-            <th>Title</th>
-            <th style="width:120px">Type</th>
-            <th style="width:84px">Rank</th>
-          </tr>
-        </thead>
-        <tbody id="pub-body">
-          <!-- =========================================================
-               Paper publish hole ei template ta copy kore ekhane bosao.
-               Type: <span class="type-j">Journal</span> ba <span class="type-c">Conference</span>
-               Rank: A* / A / B  — rank na thakle <td>—</td> likhe dao.
+      <!-- ========================== EXPERIENCE ========================== -->
+      <div class="page" id="page-experience">
+        <h1 class="pagetitle">Experience</h1>
 
-          <tr>
-            <td>2027</td>
-            <td>Paper title goes here<br>
-                <span style="font-size:.85rem;color:var(--ink-faint)">Venue name</span></td>
-            <td><span class="type-c">Conference</span></td>
-            <td><span class="rank">A*</span></td>
-          </tr>
-          <tr>
-            <td>2027</td>
-            <td>Another paper title<br>
-                <span style="font-size:.85rem;color:var(--ink-faint)">Journal name</span></td>
-            <td><span class="type-j">Journal</span></td>
-            <td><span class="rank">A</span></td>
-          </tr>
-               ========================================================= -->
-          <tr>
-            <td colspan="4" class="empty">
-              <i class="far fa-file-alt" style="opacity:.5"></i>&nbsp; No publications yet — work in progress.
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+        <div class="eitem" style="margin-bottom:26px">
+          <div class="t"><i class="fas fa-chalkboard-teacher"></i>Teaching Assistant, 2024&ndash;Present</div>
+          <div class="s">Indian Institute of Information Technology, Allahabad</div>
+          <div class="x">
+            Teaching assistant for the winter and summer semester courses
+            <strong>Problem Solving with Programming (PSP)</strong> and <strong>Data Analytics (DA)</strong>.
+          </div>
+        </div>
 
-  <!-- ===================== PROJECTS ===================== -->
-  <section id="projects">
-    <h2>Projects</h2>
+        <div class="eitem" style="margin-bottom:26px">
+          <div class="t"><i class="fas fa-lightbulb"></i>Founder, Present</div>
+          <div class="s"><a href="https://subratasikhaniketan.com/" target="_blank" rel="noopener">Subrata Sikha Niketan</a> &middot; Prayagraj, India</div>
+          <div class="x">An education platform providing study material for students preparing for competitive examinations.</div>
+        </div>
 
-    <div class="entry">
-      <div class="chip c-pink"><i class="fas fa-book-open" style="font-size:1.15rem"></i></div>
-      <div class="body">
-        <h3><a href="https://subrata-cs.github.io/open/" target="_blank" rel="noopener">Open</a> — a free computer science learning platform</h3>
-        <p class="meta">Independent project</p>
-        <p class="desc">
-          An open, structured computer-science curriculum that anyone can read for free, with an in-browser code runner
-          so learners can try things without installing anything. Built to make foundational CS material approachable
-          for students who do not have access to paid resources.
-        </p>
+        <div class="eitem">
+          <div class="t"><i class="fas fa-briefcase"></i>Assistant System Engineer, 18 Aug 2022 &ndash; 4 Mar 2024</div>
+          <div class="s">Tata Consultancy Services</div>
+          <!-- TODO: TCS-e ki kaj korechen, 1-2 line nijer bhasay ekhane likhte paren:
+          <div class="x">…</div>
+          -->
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ===================== EXPERIENCE ===================== -->
-  <section id="experience">
-    <h2>Experience</h2>
+      <!-- =========================== PROJECTS =========================== -->
+      <div class="page" id="page-projects">
+        <h1 class="pagetitle">Projects</h1>
 
-    <div class="entry">
-      <div class="chip c-violet">IIIT<br>A</div>
-      <div class="body">
-        <h3>Teaching Assistant</h3>
-        <p class="meta">
-          <a href="https://www.iiita.ac.in/" target="_blank" rel="noopener">IIIT Allahabad</a>
-          <span class="dotsep">•</span> 2024 – Present <span class="pill pill-now">current</span><br>
-          Prayagraj, Uttar Pradesh, India
-        </p>
-        <p class="desc">
-          Teaching assistant for the winter and summer semester courses
-          <strong>Problem Solving with Programming (PSP)</strong> and <strong>Data Analytics (DA)</strong>.
-        </p>
+        <div class="pub">
+          <span class="ttl"><a href="https://subrata-cs.github.io/open/" target="_blank" rel="noopener">Open &mdash; a free computer science learning platform</a></span>
+          <span class="venue grey">Live</span>
+          <div class="authors">Independent project</div>
+          <div class="links" style="color:var(--ink-soft);font-size:.94rem;margin-top:6px">
+            An open, structured computer-science curriculum that anyone can read for free, with an in-browser code
+            runner so learners can try things without installing anything. Built to make foundational CS material
+            approachable for students without access to paid resources.
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="entry">
-      <div class="chip c-green">SSN</div>
-      <div class="body">
-        <h3>Founder</h3>
-        <p class="meta">
-          <a href="https://subratasikhaniketan.com/" target="_blank" rel="noopener">Subrata Sikha Niketan</a>
-          <span class="dotsep">•</span> Prayagraj, India <span class="pill pill-now">current</span>
-        </p>
-        <p class="desc">
-          An education platform providing study material for students preparing for competitive examinations.
-        </p>
+      <!-- ============================= MISC ============================= -->
+      <div class="page" id="page-misc">
+        <h1 class="pagetitle">Skills &amp; Interests</h1>
+
+        <h2 class="sec">Technical Skills</h2>
+        <div class="srow"><div class="k">Programming</div><div class="v">Python, C, C++, JavaScript, SQL, Bash, HTML, CSS, LaTeX</div></div>
+        <div class="srow"><div class="k">ML &amp; Vision</div><div class="v">PyTorch, HuggingFace Transformers, LoRA / PEFT, OpenCV, scikit-learn, NumPy, Pandas</div></div>
+        <div class="srow"><div class="k">Multimodal &amp; RAG</div><div class="v">Vision&ndash;language models, document VQA, multi-vector retrieval, FAISS, re-ranking, embedding compression</div></div>
+        <div class="srow"><div class="k">Tools</div><div class="v">Linux, CUDA, Git, Docker, JupyterLab, Overleaf, GitHub Pages</div></div>
+        <div class="srow"><div class="k">Spoken</div><div class="v">Bengali (native) &middot; English (professional working) &middot; Hindi (limited working)</div></div>
+
+        <h2 class="center">Interests &amp; Hobbies</h2>
+        <div class="cols" style="margin-top:8px">
+          <div>
+            <h2 class="sec" style="font-size:1.05rem">Building for the Web</h2>
+            <p style="color:var(--ink-soft);font-size:.94rem">
+              I like shipping small, fast, accessible websites. Most of my side projects start as a tool I wanted for
+              myself and end up as something I can hand to a student.
+            </p>
+          </div>
+          <div>
+            <h2 class="sec" style="font-size:1.05rem">Reading &amp; Writing</h2>
+            <p style="color:var(--ink-soft);font-size:.94rem">
+              Bengali literature, and long-form writing about how research actually gets done. I keep notes on every
+              experiment that failed &mdash; they usually explain the ones that worked.
+            </p>
+          </div>
+        </div>
       </div>
+
+      <div class="foot">&copy; <span id="yr">2026</span> Subrata Pramanik</div>
+
     </div>
-
-    <div class="entry">
-      <div class="chip c-cyan">TCS</div>
-      <div class="body">
-        <h3>Assistant System Engineer</h3>
-        <p class="meta">
-          Tata Consultancy Services
-          <span class="dotsep">•</span> 18 August 2022 – 4 March 2024 <span class="pill pill-past">past</span>
-        </p>
-        <!-- TODO: TCS-e ki kaj korecho, 1-2 line nijer bhasay ekhane likhte paro.
-             Ami nijer theke kichhu likhini, karon seta bhul hote parto. -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SKILLS ===================== -->
-  <section id="skills">
-    <h2>Skills</h2>
-
-    <div class="skill-row">
-      <div class="skill-label">Languages</div>
-      <div class="tags">
-        <span class="tag-item">Python</span><span class="tag-item">C</span><span class="tag-item">C++</span>
-        <span class="tag-item">JavaScript</span><span class="tag-item">SQL</span><span class="tag-item">Bash</span>
-        <span class="tag-item">HTML</span><span class="tag-item">CSS</span><span class="tag-item">LaTeX</span>
-      </div>
-    </div>
-
-    <div class="skill-row">
-      <div class="skill-label">ML &amp; Vision</div>
-      <div class="tags">
-        <span class="tag-item">PyTorch</span><span class="tag-item">HuggingFace</span><span class="tag-item">Transformers</span>
-        <span class="tag-item">LoRA / PEFT</span><span class="tag-item">OpenCV</span><span class="tag-item">scikit-learn</span>
-        <span class="tag-item">NumPy</span><span class="tag-item">Pandas</span>
-      </div>
-    </div>
-
-    <div class="skill-row">
-      <div class="skill-label">Multimodal &amp; RAG</div>
-      <div class="tags">
-        <span class="tag-item">Vision–language models</span><span class="tag-item">Document VQA</span>
-        <span class="tag-item">Multi-vector retrieval</span><span class="tag-item">FAISS</span>
-        <span class="tag-item">Re-ranking</span><span class="tag-item">Embedding compression</span>
-      </div>
-    </div>
-
-    <div class="skill-row">
-      <div class="skill-label">Tools</div>
-      <div class="tags">
-        <span class="tag-item">Linux</span><span class="tag-item">CUDA</span><span class="tag-item">Git</span>
-        <span class="tag-item">Docker</span><span class="tag-item">JupyterLab</span><span class="tag-item">Overleaf</span>
-        <span class="tag-item">GitHub Pages</span>
-      </div>
-    </div>
-
-    <div class="skill-row">
-      <div class="skill-label">Spoken</div>
-      <div class="tags">
-        <span class="tag-item">Bengali — native</span><span class="tag-item">Hindi — limited</span>
-        <span class="tag-item">English — professional</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== INTERESTS ===================== -->
-  <section id="interests">
-    <h2>Interests &amp; Hobbies</h2>
-    <div class="grid2">
-      <div class="card">
-        <div class="ic c-cyan"><i class="fas fa-code"></i></div>
-        <h3>Building for the Web</h3>
-        <p>I like shipping small, fast, accessible websites. Most of my side projects start as a tool I wanted for
-           myself and end up as something I can hand to a student.</p>
-      </div>
-      <div class="card">
-        <div class="ic c-amber"><i class="fas fa-book"></i></div>
-        <h3>Reading &amp; Writing</h3>
-        <p>Bengali literature, and long-form writing about how research actually gets done. I keep notes on every
-           experiment that failed — they usually explain the ones that worked.</p>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="foot-in">
-    <span>&copy; <span id="yr">2026</span> Subrata Pramanik</span>
-    <span class="rule" aria-hidden="true"></span>
   </div>
-</footer>
+</div>
 
 <script>
 (function () {
   "use strict";
 
-  /* ================= CONFIG =================
-     Email — percent-encoded so scrapers can't harvest it.
-     Plain text likhleo kaj korbe.                        */
-  var CFG = {
-    emailUser: "%70%6D%72%32%30%32%34%30%30%33",   /* pmr2024003  */
-    emailHost: "%69%69%69%74%61.%61%63.%69%6E",   /* iiita.ac.in */
-    github: "Subrata-CS"
-  };
-  /* ============== CONFIG SHESH ============== */
+  /* ---------------- CONFIG ----------------
+     Email percent-encoded so scrapers can't harvest it.
+     Plain text likhleo kaj korbe.                       */
+  var EMAIL_USER = "%70%6D%72%32%30%32%34%30%30%33";      /* pmr2024003  */
+  var EMAIL_HOST = "%69%69%69%74%61.%61%63.%69%6E";       /* iiita.ac.in */
+  /* -------------- CONFIG SHESH ------------- */
 
-  var $ = function (i) { return document.getElementById(i); };
-
-  /* email */
-  var m = $('mail');
-  if (m) m.href = 'mailto:' + CFG.emailUser + '@' + CFG.emailHost;
-
-  /* theme — light by default; remembers your choice */
-  var root = document.documentElement, tbtn = $('theme'), ti = tbtn.querySelector('i');
-  function apply(t) {
-    root.setAttribute('data-theme', t);
-    ti.className = t === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    tbtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  /* photo.jpg na thakle broken-image icon er bodole ekta labelled box dekhabe */
+  var photo = document.getElementById('photo');
+  if (photo) {
+    var swap = function () {
+      if (!photo.parentNode) return;
+      var box = document.createElement('div');
+      box.className = 'photo-missing';
+      box.textContent = 'photo.jpg';
+      photo.replaceWith(box);
+    };
+    photo.addEventListener('error', swap);
+    /* Script ta page er sesh e chole, tai image ta agei fail kore jete pare
+       ar error event ta miss hoye jay. Tai ekhane-o ekbar check kora holo. */
+    if (photo.complete && photo.naturalWidth === 0) swap();
   }
-  var saved = null;
-  try { saved = localStorage.getItem('theme'); } catch (e) {}
-  apply(saved === 'dark' ? 'dark' : 'light');
-  tbtn.addEventListener('click', function () {
-    var n = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    apply(n);
-    try { localStorage.setItem('theme', n); } catch (e) {}
+
+  var mail = document.getElementById('mail');
+  if (mail) mail.href = 'mailto:' + EMAIL_USER + '@' + EMAIL_HOST;
+
+  /* ---------------- hash routing ---------------- */
+  var items = [].slice.call(document.querySelectorAll('#menu li'));
+  var pages = {};
+  [].slice.call(document.querySelectorAll('.page')).forEach(function (p) {
+    pages[p.id.replace('page-', '')] = p;
   });
 
-  /* mobile menu */
-  var burger = $('burger'), links = $('links');
+  function go(name) {
+    if (!pages[name]) name = 'home';
+    Object.keys(pages).forEach(function (k) { pages[k].classList.toggle('on', k === name); });
+    items.forEach(function (li) { li.classList.toggle('active', li.getAttribute('data-page') === name); });
+    document.title = (name === 'home' ? 'Subrata Pramanik'
+                                      : name.charAt(0).toUpperCase() + name.slice(1) + ' · Subrata Pramanik');
+    window.scrollTo(0, 0);
+  }
+
+  function fromHash() { return (location.hash || '#home').replace('#', '').toLowerCase(); }
+  go(fromHash());
+  window.addEventListener('hashchange', function () {
+    go(fromHash());
+    closeMenu();
+  });
+
+  /* ---------------- mobile menu ---------------- */
+  var burger = document.getElementById('burger');
+  var sidebar = document.getElementById('sidebar');
+  function closeMenu() {
+    sidebar.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }
   burger.addEventListener('click', function () {
-    var o = links.classList.toggle('open');
-    burger.setAttribute('aria-expanded', String(o));
+    var open = sidebar.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
   });
-  links.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') { links.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }
-  });
-
-  /* progress bar + scrollspy */
-  var as = [].slice.call(document.querySelectorAll('.links a'));
-  var secs = as.map(function (a) { return document.querySelector(a.getAttribute('href')); });
-  var nav = $('nav'), bar = $('bar'), tick = false;
-  var brand = document.querySelector('.brand'), h1 = document.querySelector('h1');
-  function upd() {
-    var y = window.scrollY;
-    nav.classList.toggle('stuck', y > 8);
-    if (brand && h1) brand.classList.toggle('reveal', h1.getBoundingClientRect().bottom < 56);
-    var h = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
-    var cur = 0;
-    for (var i = 0; i < secs.length; i++) {
-      if (secs[i] && secs[i].getBoundingClientRect().top <= 130) cur = i;
+  document.addEventListener('click', function (e) {
+    if (window.innerWidth <= 900 && sidebar.classList.contains('open') &&
+        !sidebar.contains(e.target) && !burger.contains(e.target)) {
+      closeMenu();
     }
-    as.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
-    tick = false;
-  }
-  window.addEventListener('scroll', function () {
-    if (!tick) { requestAnimationFrame(upd); tick = true; }
-  }, { passive: true });
-  upd();
+  });
+  window.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
 
-  $('yr').textContent = new Date().getFullYear();
+  document.getElementById('yr').textContent = new Date().getFullYear();
 })();
 </script>
 
