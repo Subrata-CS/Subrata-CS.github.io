@@ -56,7 +56,7 @@ img{max-width:100%;display:block;}
    ========================================================================== */
 .sidebar{
   position:fixed;top:0;left:0;bottom:0;width:var(--sidebar-w);
-  background:#fff;z-index:60;display:flex;flex-direction:column;
+  background:#fff;z-index:60;display:flex;flex-direction:column;overflow-x:hidden;
   border-right:1px solid var(--line);
 }
 .site-title{
@@ -66,20 +66,21 @@ img{max-width:100%;display:block;}
 }
 .site-title a{color:inherit;}
 .site-title a:hover{text-decoration:none;}
-.menu{list-style:none;margin:0;padding:0;overflow-y:auto;}
+.menu{list-style:none;margin:0;padding:0;overflow-y:auto;overflow-x:hidden;}
 .menu li{border-bottom:1px solid var(--line);}
 .menu a{
   display:flex;flex-direction:column;align-items:center;gap:7px;
-  padding:17px 6px;color:var(--ink-soft);font-size:.8rem;
+  padding:17px 6px;max-width:100%;color:var(--ink-soft);font-size:.8rem;
   font-family:"Oxygen",sans-serif;text-align:center;position:relative;
   transition:background-color .18s,color .18s;
 }
 .menu a:hover{text-decoration:none;color:var(--maroon);background:#fafafa;}
+.menu a span{max-width:100%;overflow-wrap:break-word;}
 .menu a i{font-size:1.18rem;color:var(--maroon-soft);transition:color .18s;}
 .menu li.active a{color:var(--maroon);background:#fbf6f6;}
 .menu li.active a i{color:var(--maroon);}
 .menu li.active a::after{
-  content:"";position:absolute;right:-1px;top:0;bottom:0;width:4px;background:var(--maroon);
+  content:"";position:absolute;right:0;top:0;bottom:0;width:4px;background:var(--maroon);
 }
 
 /* mobile bar */
@@ -188,11 +189,27 @@ hr.grad-rule{
   letter-spacing:.09em;text-transform:uppercase;padding:3px 9px;white-space:nowrap;
 }
 .venue.grey{background:#8a94a0;}
-.emptybox{
-  border:1px dashed #d8cfce;background:#fdfafa;border-radius:5px;
-  padding:22px 20px;color:var(--ink-faint);font-size:.94rem;
+
+/* publications table */
+table.ptab{width:100%;border-collapse:collapse;font-size:.93rem;}
+table.ptab th{
+  text-align:left;padding:10px 12px;background:#faf4f4;color:var(--maroon);
+  font-family:"Oxygen",sans-serif;font-size:.7rem;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;
+  border-bottom:2px solid #ecdcda;white-space:nowrap;
 }
-.emptybox b{color:var(--maroon);}
+table.ptab td{padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+table.ptab tbody tr:hover{background:#fdfafa;}
+table.ptab .ttl{color:var(--maroon);font-weight:700;}
+table.ptab .vn{color:var(--ink-faint);font-size:.86rem;margin-top:2px;}
+table.ptab tr.emptyrow td{
+  color:var(--ink-faint);text-align:center;padding:26px 16px;background:#fdfafa;
+}
+table.ptab tr.emptyrow td b{color:var(--maroon);}
+table.ptab tr.emptyrow:hover{background:#fdfafa;}
+.venue.jr{background:#0f766e;}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+@media(max-width:640px){table.ptab{min-width:520px;}}
 
 /* ==========================================================================
    SKILL / TAG ROWS
@@ -268,8 +285,19 @@ h1,h2,h3,p,li,td,th,.pub .ttl,.authors{overflow-wrap:break-word;word-break:break
 
         <div class="intro">
           <div class="intro-side">
-            <!-- photo.jpg file ta index.html er pashe rakhun.
-                 File na thakle niche ekta labelled box dekhabe, layout bhangbe na. -->
+            <!-- ==================== CHHOBI ====================
+                 SOB THEKE BHALO UPAY: chhobi ta "photo.jpg" name e save kore
+                 index.html er pashe repo te push kore din. Tahole eta sathe
+                 sathe load hobe, kokhono bhangbe na.
+
+                 Google Drive theke dekhate chaile: Drive-e file ta te
+                 right-click > Share > "Anyone with the link" korte HOBE,
+                 tarpor uporer src ta niche er ta diye badle din:
+                 src="https://drive.google.com/thumbnail?id=1g9acgGGMAMUxbKmSuKXbImo8yMz8fKwl&sz=w1000"
+                 (Drive hotlink slow, ar Google kokhono kokhono block kore.)
+
+                 File na thakle niche ekta labelled box dekhabe, layout bhangbe na.
+                 ================================================ -->
             <img id="photo" src="photo.jpg" alt="Subrata Pramanik">
             <div class="icons">
               <a href="#" id="mail" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -357,8 +385,9 @@ h1,h2,h3,p,li,td,th,.pub .ttl,.authors{overflow-wrap:break-word;word-break:break
 
         <div class="newslist">
           <!-- ===============================================================
-               Notun news add korte ei 4 line er block ta copy kore SOB THEKE
-               UPORE bosan (notun ta age thakbe):
+               NOTUN NEWS ADD KORAR NIYOM:
+               Niche er char line copy kore ei comment er NICHE, sob theke
+               upore bosan. Sob theke notun news ta sob theke upore thakbe.
 
                <div class="news">
                  <div class="d">Mon YYYY</div>
@@ -367,11 +396,15 @@ h1,h2,h3,p,li,td,th,.pub .ttl,.authors{overflow-wrap:break-word;word-break:break
                =============================================================== -->
 
           <div class="news">
-            <div class="d">2024</div>
-            <div class="c">Joined <a href="https://www.iiita.ac.in/" target="_blank" rel="noopener">IIIT Allahabad</a>
-              for the M.Tech + Ph.D. programme, working in the
-              <a href="https://imedia.iiita.ac.in/" target="_blank" rel="noopener">iMeDIA Laboratory</a>
-              with Dr. <a href="https://sites.google.com/site/mohammedjaved2016" target="_blank" rel="noopener">Mohammed Javed</a>.</div>
+            <div class="d">2026</div>
+            <div class="c">Launched <a href="https://subrata-cs.github.io/open/" target="_blank" rel="noopener">Open</a>,
+              a free computer-science learning platform.</div>
+          </div>
+
+          <div class="news">
+            <div class="d">2026</div>
+            <div class="c">Founded <a href="https://subratasikhaniketan.com/" target="_blank" rel="noopener">Subrata Sikha Niketan</a>,
+              an education platform for competitive-exam aspirants.</div>
           </div>
 
           <div class="news">
@@ -386,18 +419,12 @@ h1,h2,h3,p,li,td,th,.pub .ttl,.authors{overflow-wrap:break-word;word-break:break
               Assistant System Engineer.</div>
           </div>
 
-          <!-- TODO: ei duitor TARIKH ami jani na, tai "20XX" rekhechi.
-               Asol mash/bochor bosiye diben, ar sob theke notun ta upore niye jaben. -->
           <div class="news">
-            <div class="d">20XX</div>
-            <div class="c">Launched <a href="https://subrata-cs.github.io/open/" target="_blank" rel="noopener">Open</a>,
-              a free computer-science learning platform.</div>
-          </div>
-
-          <div class="news">
-            <div class="d">20XX</div>
-            <div class="c">Founded <a href="https://subratasikhaniketan.com/" target="_blank" rel="noopener">Subrata Sikha Niketan</a>,
-              an education platform for competitive-exam aspirants.</div>
+            <div class="d">2024</div>
+            <div class="c">Joined <a href="https://www.iiita.ac.in/" target="_blank" rel="noopener">IIIT Allahabad</a>
+              for the M.Tech + Ph.D. programme, working in the
+              <a href="https://imedia.iiita.ac.in/" target="_blank" rel="noopener">iMeDIA Laboratory</a>
+              with Dr. <a href="https://sites.google.com/site/mohammedjaved2016" target="_blank" rel="noopener">Mohammed Javed</a>.</div>
           </div>
         </div>
       </div>
@@ -406,32 +433,52 @@ h1,h2,h3,p,li,td,th,.pub .ttl,.authors{overflow-wrap:break-word;word-break:break
       <div class="page" id="page-publications">
         <h1 class="pagetitle">Publications and Preprints</h1>
 
-        <div class="emptybox">
-          <b>No publications yet.</b> Research is in progress &mdash; papers will appear here as they are accepted.
-          Each entry will show the year, title, type (journal or conference) and venue rank.
+        <div class="tablewrap">
+        <table class="ptab">
+          <thead>
+            <tr>
+              <th style="width:130px">Type</th>
+              <th style="width:74px">Year</th>
+              <th>Title</th>
+              <th style="width:90px">Paper</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- ===============================================================
+                 Paper accept hole niche er row template ta copy kore ei
+                 "No publications yet" row ta muche diye bosan.
+
+                 Conference holo:  <span class="venue">Conference</span>
+                 Journal holo:     <span class="venue jr">Journal</span>
+
+            <tr>
+              <td><span class="venue">Conference</span></td>
+              <td>2027</td>
+              <td><span class="ttl">Paper Title Goes Here</span>
+                  <div class="vn">Venue name (e.g. CVPR 2027)</div></td>
+              <td><a href="PAPER_LINK" target="_blank" rel="noopener">Link</a></td>
+            </tr>
+
+            <tr>
+              <td><span class="venue jr">Journal</span></td>
+              <td>2027</td>
+              <td><span class="ttl">Another Paper Title</span>
+                  <div class="vn">Journal name</div></td>
+              <td><a href="PAPER_LINK" target="_blank" rel="noopener">Link</a></td>
+            </tr>
+                 =============================================================== -->
+
+            <tr class="emptyrow">
+              <td colspan="4">
+                <b>No publications yet.</b> Research is in progress &mdash; papers will appear here as they
+                are accepted, with their type, year, title and a link.
+              </td>
+            </tr>
+          </tbody>
+        </table>
         </div>
 
-        <!-- ===================================================================
-             Paper accept hole ei template ta copy kore uporer emptybox ar table
-             er jaygay bosan. Venue pill er rong: default neel, preprint holo
-             <span class="venue grey">.
 
-        <div class="pub">
-          <span class="ttl"><a href="PAPER_LINK">Paper Title Goes Here</a></span>
-          <span class="venue">CVPR 2027</span>
-          <div class="authors">Subrata Pramanik, Mohammed Javed, David Doermann</div>
-          <div class="links">
-            <a href="#">Abstract</a> | <a href="#">ArXiv</a> | <a href="#">Code</a> | <a href="#">Poster</a>
-          </div>
-        </div>
-
-        <div class="pub">
-          <span class="ttl"><a href="PAPER_LINK">Another Paper Title</a></span>
-          <span class="venue grey">Preprint</span>
-          <div class="authors">Subrata Pramanik, Mohammed Javed</div>
-          <div class="links"><a href="#">Abstract</a> | <a href="#">ArXiv</a></div>
-        </div>
-             =================================================================== -->
       </div>
 
       <!-- ========================== EXPERIENCE ========================== -->
