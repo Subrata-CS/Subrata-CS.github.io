@@ -40,6 +40,8 @@
   --navy:#13294B; --text:#595959; --strong:#222; --link:#39c; --link-hover:#069;
   --rule:#e5e5e5; --soft:#f8f8f8; --note:#e74d3c; --bg:#ffffff;
 }
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{overflow-x:hidden}
 body{background-color:var(--bg);padding:0;margin:0;font:20px "Crimson Pro",Georgia,serif;color:var(--text);font-weight:400}
 h1,h2,h3,h4,h5,h6{color:var(--navy)}
 h1{font-weight:500;margin:0 0 20px;font-size:28px;line-height:1.1}
@@ -68,14 +70,14 @@ pre{padding:8px 15px;background:var(--soft);border-radius:5px;border:1px solid v
 .topnav a.icon{display:none}
 
 /* layout */
-.wrapper{width:960px;margin:0 auto}
-header{width:232px;float:left;position:fixed;-webkit-font-smoothing:subpixel-antialiased;padding-top:5.5em;text-align:center}
+.wrapper{max-width:960px;margin:0 auto;padding:0 16px;box-sizing:border-box;display:grid;grid-template-columns:232px minmax(0,650px);justify-content:space-between;column-gap:40px}
+header{position:sticky;top:0;align-self:start;-webkit-font-smoothing:subpixel-antialiased;padding-top:5.5em;text-align:center}
 .image.avatar{display:inline-block;position:relative;border-radius:100%}
 .image.avatar img{border-radius:100%;width:45%;padding:20px;aspect-ratio:1;object-fit:cover}
 header .position{font-size:1.10rem}
 .social-icons a{display:inline-block;height:2.4rem;width:2.4rem;background-color:transparent;color:var(--navy)!important;border-radius:100%;text-align:center;font-size:1.15rem;line-height:2.5rem;margin:0 5px 0 0}
 .social-icons a:hover{background-color:#fff;color:#000;transform:scale(1.2)}
-section.main{width:650px;float:right;padding-top:1.2em;padding-bottom:50px}
+section.main{min-width:0;padding-top:1.2em;padding-bottom:50px;overflow-wrap:break-word}
 section.main h2{margin:60px 0 10px}
 section.main h2.first{margin-top:72px}
 section.main ul{padding-left:40px}
@@ -112,7 +114,6 @@ section.main li{margin:0 0 4px}
 
 .contact-p strong{font-weight:600}
 .update{display:block;margin-top:10px;font-size:14px}
-.credit{font:12px/1.2 "Crimson Pro",serif;margin-top:16px}
 
 #back-to-top{position:fixed;right:20px;bottom:20px;z-index:900;border:1px solid #ccc;background:#fff;color:#333;font:15px "Crimson Pro",serif;width:100px;height:30px;line-height:28px;text-align:center;cursor:pointer;display:none}
 
@@ -146,8 +147,8 @@ section.main li{margin:0 0 4px}
 @media (max-width:1000px){.topnav .logo{margin-left:3%}.topnav a.right{margin-right:3%}.topnav a.normal{padding:10px 5px}}
 @media (max-width:960px){
   body{word-wrap:break-word}
-  div.wrapper{width:auto;margin:0}
-  header,section.main{float:none;position:static;width:auto}
+  div.wrapper{display:block;padding:0}
+  header{position:static}
   header{padding-top:80px}
   section.main{border:1px solid var(--rule);border-width:1px 0;padding:20px;margin:0 0 20px}
   section.main h2.first{margin-top:20px}
@@ -187,7 +188,7 @@ section.main li{margin:0 0 4px}
 
 <div class="wrapper" id="top">
   <header>
-    <a class="image avatar"><img src="profile.jpg" alt="Subrata Pramanik"></a>
+    <a class="image avatar"><img src="https://lh3.googleusercontent.com/d/1dzOCVYNfTEDwpl9dQ9u6iO0y3nxASbiw=w600" onerror="this.onerror=null;this.src='profile.jpg'" alt="Subrata Pramanik"></a>
     <h1>Subrata Pramanik</h1>
     <span class="position">Ph.D. Student</span>
     <br>
@@ -267,8 +268,7 @@ section.main li{margin:0 0 4px}
       <strong>Email:</strong> <email>pmr2024003 (at) iiita.ac.in</email><br>
       <strong>Personal:</strong> <email>subrata.official111 (at) gmail.com</email></p>
 
-    <small class="update" id="updated"></small>
-    <div class="credit"><a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener">The template has been adapted from Minimal Light</a></div>
+    <small class="update"><span id="updated"></span><br>&copy; <span id="yr"></span> Subrata Pramanik</small>
   </section>
 </div>
 
@@ -336,8 +336,19 @@ if (QUICK.length) $("quick").innerHTML = "<b>Quick Links</b>:<ul>" + QUICK.map((
 const scholarLinks = [LINKS.scholar && ["Google Scholar", LINKS.scholar], LINKS.orcid && ["ORCID", LINKS.orcid]].filter(Boolean);
 $("pub-links").innerHTML = scholarLinks.map(([t, u]) => `<span style="font-size:15px">[<a href="${esc(u)}" target="_blank" rel="noopener">${t}</a>]</span>`).join("");
 
-const lm = new Date(document.lastModified);
-if (!isNaN(lm)) $("updated").textContent = "Last Update: " + lm.getDate() + " " + ["January","February","March","April","May","June","July","August","September","October","November","December"][lm.getMonth()] + " " + lm.getFullYear();
+// last update = newest change to my data or to this page
+const FULL_MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const showUpdated = d => { $("updated").textContent = "Last Update: " + d.getDate() + " " + FULL_MONTHS[d.getMonth()] + " " + d.getFullYear(); };
+$("yr").textContent = new Date().getFullYear();
+const pageDate = new Date(document.lastModified);
+if (!isNaN(pageDate)) showUpdated(pageDate);
+const lastCommit = (repo, file) =>
+  fetch(`https://api.github.com/repos/${repo}/commits?path=${file}&per_page=1`)
+    .then(r => r.ok ? r.json() : [])
+    .then(c => c[0] ? new Date(c[0].commit.committer.date) : null)
+    .catch(() => null);
+Promise.all([lastCommit(REPO, "publications.json"), lastCommit("Subrata-CS/Subrata-CS.github.io", "index.html")])
+  .then(ds => { const d = ds.filter(Boolean).sort((a, b) => b - a)[0]; if (d) showUpdated(d); });
 
 // menu + back to top
 $("menu").addEventListener("click", () => $("topnav").classList.toggle("open"));
